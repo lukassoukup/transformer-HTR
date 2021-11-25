@@ -3,5 +3,3 @@ torchvision==0.11.1
 opencv-python==4.5.1.48
 tqdm==4.60
 matplotlib==3.4.1
-jiwer==2.2.0
-h5py
