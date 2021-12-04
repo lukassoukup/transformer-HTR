@@ -21,7 +21,7 @@ def write_predict(epoch, index, pred, flag, args):  # [batch_size, vocab_size] *
     if not isinstance(index, np.ndarray):
         index = [index]
 
-    with open(str(file_prefix) + (str(epoch)+'.log'), 'a') as f:
+    with open(str(file_prefix) + (str(epoch)+'.log'), 'a', encoding="utf-8") as f:
         for n, seq in zip(index, pred2):
             f.write(n+' ')
             for idx, letter in enumerate(seq):
@@ -54,6 +54,6 @@ def write_loss(loss_value, flag, args, rank=0):
         file_name = folder_name / f'loss_test_{rank}.log'
     else:
         file_name = folder_name / 'loss.log'
-    with open(file_name, 'a') as f:
+    with open(file_name, 'a', encoding="utf-8") as f:
         f.write(str(loss_value))
         f.write(' ')
